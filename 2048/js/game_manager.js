@@ -4,7 +4,7 @@ function GameManager(size, InputManager, Actuator, ScoreManager) {
   this.scoreManager = new ScoreManager;
   this.actuator     = new Actuator;
 
-  this.startTiles   = 2;
+  this.startTiles   = 7;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -39,7 +39,7 @@ GameManager.prototype.setup = function () {
 
   this.score       = 0;
   this.over        = false;
-  this.won         = false;
+  this.won         = true;
   this.keepPlaying = false;
 
   // Add the initial tiles
