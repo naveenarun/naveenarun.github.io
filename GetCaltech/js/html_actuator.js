@@ -143,11 +143,11 @@ HTMLActuator.prototype.clearMessage = function () {
 
 };
 
-/*
+
 HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-won", "game-over");
 };
-*/
+
 
 HTMLActuator.prototype.scoreTweetButton = function () {
   var tweet = document.createElement("a");
