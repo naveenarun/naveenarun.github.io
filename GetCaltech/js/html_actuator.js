@@ -129,10 +129,35 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+//  this.messageContainer.appendChild(this.scoreTweetButton());
+  twttr.widgets.load();
 };
 
 HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
-  this.messageContainer.classList.remove("game-won");
-  this.messageContainer.classList.remove("game-over");
+  this.messageContainer.classList.add(type);
+  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+
+  this.messageContainer.appendChild(this.scoreTweetButton());
+  twttr.widgets.load();
+
+};
+
+/*
+HTMLActuator.prototype.clearMessage = function () {
+  this.messageContainer.classList.remove("game-won", "game-over");
+};
+*/
+
+HTMLActuator.prototype.scoreTweetButton = function () {
+  var tweet = document.createElement("a");
+  tweet.classList.add("twitter-share-button");
+  tweet.setAttribute("href", "https://twitter.com/share");
+  tweet.setAttribute("data-via", "gabrielecirulli");
+  tweet.textContent = "Tweet";
+
+  var text = "Are you capable of reaching Caltech levels? #GetCaltech";
+  tweet.setAttribute("data-text", text);
+
+  return tweet;
 };

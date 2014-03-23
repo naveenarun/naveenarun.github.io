@@ -183,6 +183,9 @@ hr {
     .game-container .game-message .lower {
       display: block;
       margin-top: 20px; }
+    .game-container .game-message.data-text {
+      display: block;
+      margin-top: 40px; }
     .game-container .game-message a {
       display: inline-block;
       background: #8f7a66;
