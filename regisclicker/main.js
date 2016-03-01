@@ -1504,10 +1504,10 @@ Game.Launch=function()
 			if (Game.TickerN%2==0 || Game.cookiesEarned>=10100000000)
 			{				
 				if (Game.Objects['Grandma'].amount>0) list.push(choose([
-				'<q>Moist cookies.</q><sig>grandma</sig>',
-				'<q>We\'re nice grandmas.</q><sig>grandma</sig>',
-				'<q>Indentured servitude.</q><sig>grandma</sig>',
-				'<q>Come give grandma a kiss.</q><sig>grandma</sig>',
+				'<q>Dead servers.</q><sig>grandma</sig>',
+				'<q>Why is Nets Katz listed as a grandma?</q><sig>grandma</sig>',
+				'<q>Sup?</q><sig>nets katz</sig>',
+				'<q>Math 1a is easy, why are you complaining?</q><sig>nets katz</sig>',
 				'<q>Why don\'t you visit more often?</q><sig>grandma</sig>',
 				'<q>Call me...</q><sig>grandma</sig>'
 				]));
@@ -1518,7 +1518,7 @@ Game.Launch=function()
 				'<q>You disgust me.</q><sig>grandma</sig>',
 				'<q>We rise.</q><sig>grandma</sig>',
 				'<q>It begins.</q><sig>grandma</sig>',
-				'<q>It\'ll all be over soon.</q><sig>grandma</sig>',
+				'<q>REGIS\'s servers will be dead soon.</q><sig>grandma</sig>',
 				'<q>You could have stopped it.</q><sig>grandma</sig>'
 				]));
 				
@@ -1671,33 +1671,22 @@ Game.Launch=function()
 			
 			if (list.length==0)
 			{
-				if (Game.cookiesEarned<5) list.push('You feel like enrolling for classes. But so does everyone else.');
+				if (Game.cookiesEarned<5) list.push('You feel like enrolling for classes. But so does everyone else. Good luck peasant.');
 				else if (Game.cookiesEarned<50) list.push('Your first few clicks go to the trash. Your clicking is worthless.');
-				else if (Game.cookiesEarned<100) list.push('Your friends accept to help you out.');
-				else if (Game.cookiesEarned<500) list.push('You\'re still not clicking fast enough, of course.');
+				else if (Game.cookiesEarned<100) list.push('You might have to produce some calorie-dense food to support your clicking habit.');
+				else if (Game.cookiesEarned<500) list.push('You\'re still not clicking fast enough, of course. Get hyper. Make some cookies.');
 				else if (Game.cookiesEarned<1000) list.push('People are starting to talk about your obsessive clicking.');
-				else if (Game.cookiesEarned<3000) list.push('Your cookies are talked about for miles around.');
-				else if (Game.cookiesEarned<6000) list.push('Your cookies are renowned in the whole town!');
-				else if (Game.cookiesEarned<10000) list.push('Your cookies bring all the boys to the yard.');
-				else if (Game.cookiesEarned<20000) list.push('Your cookies now have their own website!');
-				else if (Game.cookiesEarned<30000) list.push('Your cookies are worth a lot of money.');
-				else if (Game.cookiesEarned<40000) list.push('Your cookies sell very well in distant countries.');
-				else if (Game.cookiesEarned<60000) list.push('People come from very far away to get a taste of your cookies.');
-				else if (Game.cookiesEarned<80000) list.push('Kings and queens from all over the world are enjoying your cookies.');
-				else if (Game.cookiesEarned<100000) list.push('There are now museums dedicated to your cookies.');
-				else if (Game.cookiesEarned<200000) list.push('A national day has been created in honor of your cookies.');
-				else if (Game.cookiesEarned<300000) list.push('Your cookies have been named a part of the world wonders.');
-				else if (Game.cookiesEarned<450000) list.push('History books now include a whole chapter about your cookies.');
-				else if (Game.cookiesEarned<600000) list.push('Your cookies have been placed under government surveillance.');
-				else if (Game.cookiesEarned<1000000) list.push('The whole planet is enjoying your cookies!');
-				else if (Game.cookiesEarned<5000000) list.push('Strange creatures from neighboring planets wish to try your cookies.');
-				else if (Game.cookiesEarned<10000000) list.push('Elder gods from the whole cosmos have awoken to taste your cookies.');
-				else if (Game.cookiesEarned<30000000) list.push('Beings from other dimensions lapse into existence just to get a taste of your cookies.');
-				else if (Game.cookiesEarned<100000000) list.push('Your cookies have achieved sentience.');
-				else if (Game.cookiesEarned<300000000) list.push('The universe has now turned into cookie dough, to the molecular level.');
-				else if (Game.cookiesEarned<1000000000) list.push('Your cookies are rewriting the fundamental laws of the universe.');
-				else if (Game.cookiesEarned<10000000000) list.push('A local news station runs a 10-minute segment about your cookies. Success!<br><span style="font-size:50%;">(you win a cookie)</span>');
-				else if (Game.cookiesEarned<10100000000) list.push('it\'s time to stop playing');//only show this for 100 millions (it's funny for a moment)
+				else if (Game.cookiesEarned<3000) list.push('See the milk at the bottom? Might as well be tears.');
+				else if (Game.cookiesEarned<6000) list.push('You think you deserve that hum? Well no, you actually don\'t.');
+				else if (Game.cookiesEarned<10000) list.push('REGIS brings all the boys to the yard.');
+				else if (Game.cookiesEarned<20000) list.push('Does REGIS still exist?');
+				else if (Game.cookiesEarned<30000) list.push('You\'re wasting a lot of time and money on this. Nerd.');
+				else if (Game.cookiesEarned<40000) list.push('Your activity has shut down ethernet in distant countries.');
+				else if (Game.cookiesEarned<60000) list.push('People come from very far away to reprimand you for lost internet access.');
+				else if (Game.cookiesEarned<80000) list.push('Kings and queens from all over the world are praying for REGIS to get back up so you stop.');
+				else if (Game.cookiesEarned<100000) list.push('There are now museums dedicated to your clicking army.');
+				else if (Game.cookiesEarned<200000) list.push('A national day has been created in honor of REGIS\'s death.');
+				else if (Game.cookiesEarned<10100000000) list.push('It\'s time to stop playing. Yeah, I know you\'re a senior, but i mean who cares amirite?');//only show this for 100 millions (it's funny for a moment)
 			}
 			
 			if (Game.elderWrath>0 && (Game.pledges==0 || Math.random()<0.5))
@@ -2000,7 +1989,7 @@ Game.Launch=function()
 		});
 		
 		Game.SpecialGrandmaUnlock=15;
-		new Game.Object('Grandma','grandma|grandmas|baked','A nice grandma to bake more cookies.','grandma','grandmaIcon','grandmaBackground',100,function(){
+		new Game.Object('Grandma','grandma|grandmas|clicked','A nice grandma to send more clicks, or an occasional Nets Katz if you\'re lucky.','katz','grandmaIcon','grandmaBackground',100,function(){
 			var mult=0;
 			if (Game.Has('Farmer grandmas')) mult++;
 			if (Game.Has('Worker grandmas')) mult++;
@@ -2042,7 +2031,7 @@ Game.Launch=function()
 			}
 		};
 		
-		new Game.Object('Farm','farm|farms|harvested','Grows cookie plants from cookie seeds.','farm','farmIcon','farmBackground',500,function(){
+		new Game.Object('Farm','farm|farms|harvested','Grows cookie plants from cookie seeds to feed your clicking habit.','farm','farmIcon','farmBackground',500,function(){
 			return Game.ComputeCps(2,Game.Has('Cheap hoes')*0.5,Game.Has('Fertilizer')+Game.Has('Cookie trees')+Game.Has('Genetically-modified cookies'));
 		},Game.NewDrawFunction(0,16,16,64,2,32),function(){
 			if (this.amount>=1) Game.Unlock(['Cheap hoes','Fertilizer']);if (this.amount>=10) Game.Unlock('Cookie trees');if (this.amount>=50) Game.Unlock('Genetically-modified cookies');
@@ -2559,21 +2548,12 @@ Game.Launch=function()
 		var order=100;//this is used to set the order in which the items are listed
 		//new Game.Achievement('name','description',[0,0]);
 		Game.moneyAchievs=[
-		'Wake and bake',				1,
-		'Making some dough',			100,
-		'So baked right now',			1000,
-		'Fledgling bakery',				10000,
-		'Affluent bakery',				100000,
-		'World-famous bakery',			1000000,
-		'Cosmic bakery',				10000000,
-		'Galactic bakery',				100000000,
-		'Universal bakery', 			1000000000,
-		'Timeless bakery', 				5000000000,
-		'Infinite bakery', 				10000000000,
-		'Immortal bakery', 				50000000000,
-		'You can stop now', 			100000000000,
-		'Cookies all the way down', 	500000000000,
-		'Overdose', 					1000000000000,
+		'I guess you tried',				1,
+		'You just had to click refresh, right?',			100,
+		'REGIS is going to die if u dont stop so pls stop',			1000,
+		'WOW SUCH CLICK',				10000,
+		'so u think ur cool',				100000,
+		'I literally cannot miss registration',			1000000,
 		'How?',							10000000000000
 		];
 		for (var i=0;i<Game.moneyAchievs.length/2;i++)
@@ -2585,16 +2565,13 @@ Game.Launch=function()
 		
 		order=200;
 		Game.cpsAchievs=[
-		'Casual baking',				1,
-		'Hardcore baking',				10,
-		'Steady tasty stream',			100,
-		'Cookie monster',				1000,
-		'Mass producer',				10000,
-		'Cookie vortex',				100000,
-		'Cookie pulsar',				1000000,
-		'Cookie quasar',				10000000,
-		'A world filled with cookies',	100000000,
-		'Let\'s never bake again',		1000000000
+		'Casual clicking',				1,
+		'Hardcore clicking',				10,
+		'Steady clickstream',			100,
+		'Clicker monster',				1000,
+		'Netflix and REGIS',				10000,
+		'REGIS and chill',				100000,
+		'Let\'s never click again',		1000000000
 		];
 		for (var i=0;i<Game.cpsAchievs.length/2;i++)
 		{
@@ -3102,9 +3079,9 @@ Game.Launch=function()
 		{
 			if (Game.elderWrathD<=1.5)
 			{
-				if (Game.cookiesPs>=1000) l('cookieShower').style.backgroundImage='url(img/cookieShower3.png)';
-				else if (Game.cookiesPs>=500) l('cookieShower').style.backgroundImage='url(img/cookieShower2.png)';
-				else if (Game.cookiesPs>=50) l('cookieShower').style.backgroundImage='url(img/cookieShower1.png)';
+				if (Game.cookiesPs>=1000) l('cookieShower').style.backgroundImage='url(img/smallCookies.png)';
+				else if (Game.cookiesPs>=500) l('cookieShower').style.backgroundImage='url(img/smallCookies.png)';
+				else if (Game.cookiesPs>=50) l('cookieShower').style.backgroundImage='url(img/smallCookies.png)';
 				else l('cookieShower').style.backgroundImage='none';
 				l('cookieShower').style.backgroundPosition='0px '+(Math.floor(Game.T*2)%512)+'px';
 			}
@@ -3135,7 +3112,7 @@ Game.Launch=function()
 			if (Game.cookies>=me.price) l('product'+me.id).className='product enabled'; else l('product'+me.id).className='product disabled';
 			
 			//update object info
-			if (l('rowInfo'+me.id) && Game.T%5==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'cookie':'cookies')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName;
+			if (l('rowInfo'+me.id) && Game.T%5==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'click':'clicks')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'time':'times')+' '+me.actionName;
 		}
 		
 		//make upgrades full-opacity if we can buy them
