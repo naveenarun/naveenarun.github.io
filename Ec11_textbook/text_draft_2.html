@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+        "HTMLFiles/xhtml-math11-f.dtd">
+
+<!-- Created with the Wolfram Language for Students - Personal Use Only : www.wolfram.com -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>
+  Ec_11_guide (the Wolfram Language for Students - Personal Use Only : www.wolfram.com)
+ </title>
+ <link href="HTMLFiles/text_draft_2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p class="BookChapterNumber">
+ 1
+</p>
+
+
+
+<p class="BookChapterTitle">
+ <span style='font-style: italic;'>Mathematica</span> For Ec11: Introduction
+</p>
+
+
+
+<h3 class="Section">1.1. Why use this guide?</h3>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica</span> is a wonderful piece of symbolic math software that Caltech bestows upon its students. The main essence of its usefulness lies in its ability to simplify complex mathematical manipulations without compromising accuracy. In this guide, we cover some basic uses of <span style='font-style: italic;'>Mathematica</span> and how this software can be used for economic problems.
+</p>
+
+
+
+<p class="Text">
+ There are several types of people who may wind up using this guide, including:
+</p>
+
+
+
+<li>Students who have never used math software before</li>
+
+<li>Students with no prior exposure to economics</li>
+
+<li>Students who are familiar with <span style='font-style: italic;'>Mathematica</span> but would like some refreshers on syntax</li>
+
+<li>Students who are familiar with <span style='font-style: italic;'>Mathematica</span> but are interested in how it can be applied to problems in Economics.</li>
+
+<p class="Text">
+ If you are any of these people, you will find it useful to work through the examples in this text to gain some familiarity with <span style='font-style: italic;'>Mathematica</span>&rsquo;s features and how they can be used to gain insight into economic concepts.&nbsp;&nbsp;
+</p>
+
+
+
+<h3 class="Section">1.2. Contents</h3>
+
+<p class="Text">
+ This guide covers the following topics:
+</p>
+
+
+
+<li>Intoduction (This section)</li>
+
+<li>Why use this guide?</li>
+
+<li>Contents</li>
+
+<li>How to add content to this guide</li>
+
+<li>Basic usage of <span style='font-style: italic;'>Mathematica </span></li>
+
+<li>Getting Started</li>
+
+<li>Variables and Functions</li>
+
+<li>Built-in functions</li>
+
+<li>Making your own functions</li>
+
+<li>Solving and Substitution</li>
+
+<li>Principles of Optimizing Behavior</li>
+
+<li>Consumer Theory</li>
+
+<li>Producer Theory</li>
+
+<li>Competitive Markets</li>
+
+<li>Government Policy in Competitive Markets</li>
+
+<li>Imperfect Competition I: Monopoly</li>
+
+<li>Imperfect Competition II: Oligopoly and Monopolistic Competition</li>
+
+<li>Externalities and Government Intervention</li>
+
+<h3 class="Section">1.2. Who should I contact to add content to this guide?</h3>
+
+<p class="Text">
+ If you have any ideas for new content to add to this guide, contact the course instructor, Dr. Rangel (rangel@hss.caltech.edu).
+</p>
+
+
+
+<p class="Text">
+ This guide was written in 2016, so if any compatibility issues arise during your year please contact the author, Naveen Arunachalam (narunach@caltech.edu).
+</p>
+
+
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="BookChapterNumber">
+ 2
+</p>
+
+
+
+<p class="BookChapterTitle">
+ Basic Usage of Mathematica
+</p>
+
+
+
+<h3 class="Section">2.1. Getting Started</h3>
+
+<p class="Text">
+ If you have never used <span style='font-style: italic;'>Mathematica</span> before, a lot of it can be very confusing. Likely, you have already accidentally modified some of the contents of this notebook and are not sure what to do. If so, either (a) press Ctrl+z (or Cmd+z, for Macs) to undo the changes, or (b) redownload the notebook and proceed from where you left off.
+</p>
+
+
+
+<p class="Text">
+ In this section, you will learn how to create a new document to get a firsthand taste of <span style='font-style: italic;'>Mathematica</span>, and evaluate your own expressions in that new file.
+</p>
+
+
+
+<p class="Text">
+ If you are already familiar with <span style='font-style: italic;'>Mathematica</span>, just skip to Chapter 3 to start with the economics.
+</p>
+
+
+
+<h4 class="Subsection">2.1.1 Creating a Notebook</h4>
+
+<p class="Text">
+ The first thing you need to do is create a new notebook. Go to <span style='font-weight: bold;'>File &gt; New &gt; Notebook</span> to bring up an Untitled document. You will see a blank document with a cursor.
+</p>
+
+
+
+<h4 class="Subsection">2.1.2 Evaluating an Expression </h4>
+
+<p class="Text">
+ If you want to get something calculated, just click anywhere and type an expression, and hit <span style='font-weight: bold;'>Shift+Enter</span> to evaluate.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.1.</span> <span style='font-style: italic;'>(If you are viewing in Mathematica, not modify anything in this notebook):</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_1.png" alt="text_draft_2_1.png" width="27" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_2.png" alt="text_draft_2_2.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.2. </span><span style='font-style: italic;'>Evaluating a simple expression </span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_3.png" alt="text_draft_2_3.png" width="77" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_4.png" alt="text_draft_2_4.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ To query using natural language, type <span style='font-weight: bold;'>&ldquo;=&rdquo;</span> before your expression to get an orange block symbol, and press <span style='font-weight: bold;'>Shift+Enter</span> to evaluate:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.3. </span><span style='font-style: italic;'>Typing (without quotes) &ldquo;Graph of y=1-2x&rdquo; using natural language input</span>.
+</p>
+
+
+
+<p class="WolframAlphaShortInput">
+ <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.embed('HTMLFiles/text_draft_2_5.cdf', 134, 108);
+</script>
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_6.gif" alt="text_draft_2_6.gif" width="360" height="210" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ To query Wolfram Alpha, type &ldquo;<span style='font-weight: bold;'>==&rdquo; (two equals signs) </span>before your expression to get an orange star symbol, and press <span style='font-weight: bold;'>Shift+Enter</span> to evaluate. I recommend doing this instead of visiting wolframalpha.com, since you will get a lot more information in addition to premium features.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.4.</span> <span style='font-style: italic;'>Typing (without quotes) &ldquo;solve for x in 5+x=sqrt(x^2+3)&rdquo; using a Wolfram Alpha query.</span>
+</p>
+
+
+
+<p class="WolframAlphaLong">
+ solve for x in 5+x=sqrt(x^2+3)
+</p>
+
+
+
+<p class='Print' style='margin-left: 20px;margin-right: 10px;'>
+ <img src="HTMLFiles/text_draft_2_7.gif" alt="text_draft_2_7.gif" width="717" height="514" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ Most of your work in this class will focus on the first query method, i.e. the plain method used in Examples 2.1 and 2.2. Although the methods of Examples 2.3 and 2.4 are novel and convenient, they do not have same degree of versatility as native <span style='font-style: italic;'>Mathematica</span> code.
+</p>
+
+
+
+<h4 class="Subsection">2.1.3. Deleting a Cell</h4>
+
+<p class="Text">
+ At this point your have likely accumulated quite a bit of clutter in your new document. To declutter your workspace, <span style='font-weight: bold;'>click and drag</span> over the cells (or subcells) you want to delete, represented by <span style='font-weight: bold;'>blue brackets</span> on the <span style='font-weight: bold;'>right edge of the screen</span>. Then, press <span style='font-weight: bold;'>backspace</span> or <span style='font-weight: bold;'>delete</span> do remove those cells.
+</p>
+
+
+
+<h4 class="Subsection">2.1.4. Editing a Cell</h4>
+
+<p class="Text">
+ To edit a cell&rsquo;s contents, click on any text that follows an <span style='font-weight: bold;'>In[#]:=</span> line and edit it. The contents of the Out[#]:= line will grey out, and you can reactivate it by pressing <span style='font-weight: bold;'>Shift+Enter</span> to generate a new answer.
+</p>
+
+
+
+<h4 class="Subsection">2.1.5. Working with variables</h4>
+
+<p class="Text">
+ Often, you would like to define variables in the same way you would by hand. To do this, <span style='font-style: italic;'>Mathematica</span> requires a variable name that starts with a letter and does not contain special characters. This variable name should be present on the left hand side of an equals sign, and a valid expression should be entered on the right hand side.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.5.</span><span style='font-style: italic;'> Defining and working with variables. Note the use of semicolons to silence output.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_8.gif" alt="text_draft_2_8.gif" width="43" height="46" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_9.png" alt="text_draft_2_9.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.6.</span><span style='font-style: italic;'> Illustration of valid variable names (a letter followed by a string of letters and/or numbers), and what happens if you don&rsquo;t silence output (i.e. if you forget semicolons)</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_10.gif" alt="text_draft_2_10.gif" width="57" height="44" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_11.png" alt="text_draft_2_11.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_12.png" alt="text_draft_2_12.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_13.png" alt="text_draft_2_13.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.1.6. Using a previous answer</h4>
+
+<p class="Text">
+ Sometimes you would like to use a previous answer in an expression. To do this, use the <span style='font-weight: bold;'>percent sign</span> (%)<span style='font-weight: bold;'>.</span>
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.7. </span><span style='font-style: italic;'>Illustration of usage of &ldquo;%&rdquo; symbol</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_14.gif" alt="text_draft_2_14.gif" width="27" height="29" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_15.png" alt="text_draft_2_15.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_16.png" alt="text_draft_2_16.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.1.7. Cell scope</h4>
+
+<p class="Text">
+ Sometimes you would like to stay in the same notebook and not have previous variables interfere with your calculations. To ensure this, you can use the <span style='font-weight: bold;'>Clear[]</span> function or use the settings <span style='font-weight: bold;'>Evaluation &gt; Notebook&rsquo;s Default Context &gt; Unique to Each Cell Group.</span>
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.1.8.</span><span style='font-style: italic;'> Example usage of Clear[]. Note that when </span>Mathematica<span style='font-style: italic;'> does not have a value for a variable, it leaves the variable alone.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_17.png" alt="text_draft_2_17.png" width="94" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_18.png" alt="text_draft_2_18.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_19.png" alt="text_draft_2_19.png" width="72" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_20.png" alt="text_draft_2_20.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_21.gif" alt="text_draft_2_21.gif" width="129" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_22.png" alt="text_draft_2_22.png" width="92" height="14" style="vertical-align:middle" />
+</p>
+
+<h3 class="Section">2.2. Variables and Functions</h3>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica</span> is capable of symbolic math. This is especially useful for economics, since economics deals with the relationships between variables. In this section you will learn how to do simple manipulations with variables, make substitutions, get numeric answers, and define functions.
+</p>
+
+
+
+<h4 class="Subsection">2.2.1. Manipulating variables</h4>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica</span> makes variable manipulation easy. If variables do not have numerical values, they are treated as symbolic entities and will be handled as such.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.1. </span><span style='font-style: italic;'>An example of basic variable manipulation</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_23.png" alt="text_draft_2_23.png" width="95" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_24.png" alt="text_draft_2_24.png" width="28" height="33" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.2.2. Special variables</h4>
+
+<p class="Text">
+ There are some special variables to be aware of, such as pi and e. To access these, write them with <span style='font-weight: bold;'>capital letters</span>.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.2.</span><span style='font-style: italic;'> Usage of pi and e in an expression. Note the e is written in bold, and the pi is written in Greek.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_25.png" alt="text_draft_2_25.png" width="68" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_26.png" alt="text_draft_2_26.png" width="43" height="15" style="vertical-align:middle" />
+</p>
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.3. </span><span style='font-style: italic;'>A reminder about the difference a capital letter can make. (Capital letter = built-in constant; lowercase = variable)</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_27.gif" alt="text_draft_2_27.gif" width="242" height="62" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_28.png" alt="text_draft_2_28.png" width="14" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_29.png" alt="text_draft_2_29.png" width="17" height="13" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.2.3. Forcing numerical answers</h4>
+
+<p class="Text">
+ You can get a numerical answer by typing &ldquo;<span style='font-weight: bold;'>//N&rdquo;</span> at the end of your queries. This takes the result of your query and runs it through <span style='font-style: italic;'>Mathematica</span>&rsquo;s N[] function, which converts an expression to a number.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.4.</span><span style='font-style: italic;'> Obtaining numerical answers for some simple expressions</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_30.png" alt="text_draft_2_30.png" width="43" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_31.png" alt="text_draft_2_31.png" width="50" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_32.png" alt="text_draft_2_32.png" width="66" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_33.png" alt="text_draft_2_33.png" width="50" height="13" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.2.4. Making substitutions</h4>
+
+<p class="Text">
+ Sometimes it is more convenient to substitute values for variables after the expression is written. To do this, type &ldquo;<span style='font-weight: bold;'>/.&rdquo; (slash dot)</span> at the end of your expression and use an <span style='font-weight: bold;'>arrow (&ldquo;-&gt;&rdquo;)</span> between the variable name and the value you want to write in its place.
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.5. </span><span style='font-style: italic;'>Example of a substitution placed after an expression. Note that x is never assigned a value, but we are able to make substitutions.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_34.png" alt="text_draft_2_34.png" width="27" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_35.png" alt="text_draft_2_35.png" width="27" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_36.png" alt="text_draft_2_36.png" width="418" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_37.png" alt="text_draft_2_37.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_38.png" alt="text_draft_2_38.png" width="350" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_39.png" alt="text_draft_2_39.png" width="27" height="13" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.2.3. Built-in functions</h4>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica</span> has a lot of built-in functions that make life easier. Here are just a few to get started:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.6.</span><span style='font-style: italic;'> Calculating a natural logarithm, a base-10 logarithm, and a sine, respectively.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_40.png" alt="text_draft_2_40.png" width="59" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_41.png" alt="text_draft_2_41.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_42.png" alt="text_draft_2_42.png" width="79" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_43.png" alt="text_draft_2_43.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_44.png" alt="text_draft_2_44.png" width="68" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_45.png" alt="text_draft_2_45.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica&rsquo;</span>s functions can also operate on variables:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.7.</span><span style='font-style: italic;'> Calculating the sum 2y+3y+4y+5y</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_46.png" alt="text_draft_2_46.png" width="129" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_47.png" alt="text_draft_2_47.png" width="24" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ When you encounter a new <span style='font-style: italic;'>Mathematica</span> function you want to use, you can get some information by pressing the <span style='font-weight: bold;'>info button</span> or the <span style='font-weight: bold;'>tooltip arrow</span> that shows up when you type the function name. Note that <span style='font-weight: bold;'>built-in functions start with capital letters</span>; this is so you can tell them apart from your own functions.
+</p>
+
+
+
+<h4 class="Subsection">2.2.4. Making your own functions</h4>
+
+<p class="Text">
+ Sometimes you want to write and use your own functions. To do this, you use the following notation:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.2.8. </span><span style='font-style: italic;'>Creating and using a function; note how variables in the function definition are followed by underscores. Also note that the function names start with lowercase letters.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_48.gif" alt="text_draft_2_48.gif" width="206" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_49.png" alt="text_draft_2_49.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_50.png" alt="text_draft_2_50.png" width="111" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_51.png" alt="text_draft_2_51.png" width="39" height="15" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ A quick note on the <span style='font-weight: bold;'>underscore</span> (<span style='font-weight: bold;'>&ldquo;_&rdquo;</span>) character in the function definition. <span style='font-style: italic;'>Mathematica</span> uses the underscore to represent the concept of &ldquo;anything&rdquo;, and the characters preceding the underscore represent a name to assign to that &ldquo;anything&rdquo;. In the case of the example above, when you type <span style='font-weight: bold;'>myFunction[someText]</span>, <span style='font-style: italic;'>Mathematica</span> scans <span style='font-weight: bold;'>someText</span> for a comma, and assigns everything before the comma to the variable &ldquo;x&rdquo; and everything after it to the variable &ldquo;y&rdquo;. Then it takes that &ldquo;x&rdquo; and &ldquo;y&rdquo; and runs it through &ldquo;x^2+y^2&rdquo;. This is why it is always necessary to have the underscores present if you want your functions to actually work.
+</p>
+
+
+
+<h3 class="Section">3.2. Solving Methods</h3>
+
+<h4 class="Subsection">2.3.1. Boolean Expressions</h4>
+
+<p class="Text">
+ <span style='font-style: italic;'>Mathematica</span> deals with Boolean expressions (i.e. &ldquo;True or False&rdquo; expressions) to solve equations. To make a true-or-false comparison, use a <span style='font-weight: bold;'>double equals sign (&ldquo;==&rdquo;).</span>
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.3.1.</span><span style='font-style: italic;'> An expression that evaluates to True, and an expression that evaluates to False. Note the double equals sign.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_52.png" alt="text_draft_2_52.png" width="32" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_53.png" alt="text_draft_2_53.png" width="29" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_54.png" alt="text_draft_2_54.png" width="52" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_55.png" alt="text_draft_2_55.png" width="52" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ It is very important to use a double equals sign. <span style='font-weight: bold;'>If you accidentally use a single equals sign</span>, it is usually best to (a)<span style='font-weight: bold;'> </span>make sure you set<span style='font-weight: bold;'> Evaluation &gt; Notebook&rsquo;s Default Context &gt; Unique to Each Cell Group</span>, and<span style='font-weight: bold;'> </span>(b)<span style='font-weight: bold;'> start over in a new cell</span>, since a single equals sign permanently assigns the right hand side to the left hand side. This can often lead to unexpected consequences because your computer will remember that variable assignment forever unless you explicitly tell it not to.
+</p>
+
+
+
+<h4 class="Subsection">2.3.2. Solving a set of equations</h4>
+
+<p class="Text">
+ When <span style='font-style: italic;'>Mathematica</span> solves an equation, it looks for value(s) of some variable(s) such that some Boolean condition(s) evaluate to True. Here are some examples:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.3.2. </span><span style='font-style: italic;'>Solving a single equation</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_56.png" alt="text_draft_2_56.png" width="120" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_57.png" alt="text_draft_2_57.png" width="59" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.3.3. </span><span style='font-style: italic;'>Solving under different sets of conditions</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_58.png" alt="text_draft_2_58.png" width="136" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_59.png" alt="text_draft_2_59.png" width="123" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_60.png" alt="text_draft_2_60.png" width="425" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_61.png" alt="text_draft_2_61.png" width="67" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.3.4.</span><span style='font-style: italic;'> Solving simultaneous equations which we disguise as True/False statements</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_62.png" alt="text_draft_2_62.png" width="237" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_63.png" alt="text_draft_2_63.png" width="101" height="14" style="vertical-align:middle" />
+</p>
+
+<h4 class="Subsection">2.3.3. Using the results of an equation solver</h4>
+
+<p class="Text">
+ To grab and use the results of Solve[] and other related functions, we have to extract the answer we want from our solution. Answers come in the form of variable substitutions (arrows), so we need to use the <span style='font-weight: bold;'>slash dot</span> (&ldquo;/.&rdquo;) notation at the end to plug them into whatever expression we want to use them for. 
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 2.3.5. </span><span style='font-style: italic;'>Grabbing and using a result of Solve[]. Note that arrays are indexed starting at 1, and the [[1]] notation is translated by </span>Mathematica<span style='font-style: italic;'> into the instruction &ldquo;get element 1 from the array&rdquo;</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_64.png" alt="text_draft_2_64.png" width="230" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_65.png" alt="text_draft_2_65.png" width="123" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_66.png" alt="text_draft_2_66.png" width="114" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_67.png" alt="text_draft_2_67.png" width="45" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_68.png" alt="text_draft_2_68.png" width="149" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_69.png" alt="text_draft_2_69.png" width="31" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_70.png" alt="text_draft_2_70.png" width="520" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_71.png" alt="text_draft_2_71.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_72.png" alt="text_draft_2_72.png" width="656" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_73.png" alt="text_draft_2_73.png" width="7" height="13" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="BookChapterNumber">
+ 3
+</p>
+
+
+
+<p class="BookChapterTitle">
+ Modeling Optimizing Behavior
+</p>
+
+
+
+<h3 class="Section">3.1. Overview</h3>
+
+<p class="Text">
+ The first thing we observe is that economic entities tend to maximize thier utlity, which depends on some set of variables. To identify maxima, we often look at certain characteristics of net utility, such as derivatives, second derivatives, and boundary conditions. It is often possible to examine these systems in <span style='font-style: italic;'>Mathematica</span> to obtain greater understanding of how they operate.
+</p>
+
+
+
+<h4 class="Subsection">3.1.1. A Toy System</h4>
+
+<p class="Text">
+ Let us consider a firm that must allocate <span style='font-weight: bold;'>M</span> units of <span style='font-weight: bold;'>a</span> and <span style='font-weight: bold;'>b</span> according to the utility function
+</p>
+
+
+
+{<table class='EquationNumbered'><tr><td>, Automatic, $CellContext`IncludeCount[</td><td class='EquationNumberedLabel'>(`1`.`2`)</td></tr></table>, BookChapterNumber, EquationNumbered]}[FormBox[RowBox[{RowBox[{U, (, RowBox[{a, ,, b}], )}], =, RowBox[{RowBox[{5, RowBox[{Log, (, RowBox[{2, a}], )}]}], +, RowBox[{10, RowBox[{Log, (, RowBox[{4, b}], )}]}]}]}], TraditionalForm]]<p class="Text">
+ Our constraint is
+</p>
+
+
+
+{<table class='EquationNumbered'><tr><td>, Automatic, $CellContext`IncludeCount[</td><td class='EquationNumberedLabel'>(`1`.`2`)</td></tr></table>, BookChapterNumber, EquationNumbered]}[FormBox[RowBox[{RowBox[{a, +, b}], =, M}], TraditionalForm]]<p class="Text">
+ So our utility function becomes
+</p>
+
+
+
+{<table class='EquationNumbered'><tr><td>, Automatic, $CellContext`IncludeCount[</td><td class='EquationNumberedLabel'>(`1`.`2`)</td></tr></table>, BookChapterNumber, EquationNumbered]}[FormBox[RowBox[{RowBox[{U, (, RowBox[{a, ,, M}], )}], =, RowBox[{RowBox[{5, RowBox[{Log, (, RowBox[{2, a}], )}]}], +, RowBox[{10, RowBox[{Log, (, RowBox[{4, *, RowBox[{(, RowBox[{M, -, a}], )}]}], )}]}]}]}], TraditionalForm]]<p class="Text">
+ To understand this from an intuitive standpoint, we can consider what happens to <span style='font-weight: bold;'>U(a,b)</span> as we vary both <span style='font-weight: bold;'>a</span> and <span style='font-weight: bold;'>b</span>:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Figure 3.1.1. </span><span style='font-style: italic;'>The dependence of U (vertical axis) on a and b (horizon axies); the cut plane represents valid combinations of a and b that satisfy a+b=M. (If things look broken, go to the menu and click Evaluation &gt; Evaluate Initialization Cells, and make sure you clicked &ldquo;Enable Dynamics&rdquo; when the notebook opened. You can ignore the code above the figure.)</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_74.gif" alt="text_draft_2_74.gif" width="1021" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.embed('HTMLFiles/text_draft_2_75.cdf', 433, 394);
+</script>
+</p>
+
+<p class="Text">
+ From this figure it is readily apparent that there exists a maximum somehwere along the cut plane of legal combinations of <span style='font-weight: bold;'>a</span> and <span style='font-weight: bold;'>b</span>. Let&rsquo;s try to take a closer look at what the value of <span style='font-weight: bold;'>U(a,b)</span> looks like when constrained by a specific <span style='font-weight: bold;'>M</span>:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Figure 3.1.2. </span><span style='font-style: italic;'>The dependence of U(a,b) on a when constrained by M. The location of the maximum is represented by a vertical line. (If things look broken, go to the menu and click Evaluation &gt; Evaluate Initialization Cells, and make sure you clicked &ldquo;Enable Dynamics&rdquo; when the notebook opened. You can ignore the code above the figure.)</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_76.gif" alt="text_draft_2_76.gif" width="967" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.embed('HTMLFiles/text_draft_2_77.cdf', 433, 330);
+</script>
+</p>
+
+<p class="Text">
+ If this still a bit abstract, here&rsquo;s both plots side-by-side:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Figure 3.1.3. </span><span style='font-style: italic;'>The dependence of U(a,b) on a when constrained by M. A front view of the 3D plot is shown on the left to demonstrate its homology to the 2D plot on the right. Note you can change the sizes of the plots by clicking and then dragging the orange bounding box. (If things look broken, go to the menu and click Evaluation &gt; Evaluate Initialization Cells, and make sure you clicked &ldquo;Enable Dynamics&rdquo; when the notebook opened. You can ignore the code above the figure.)</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_78.gif" alt="text_draft_2_78.gif" width="1561" height="46" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+<script type="text/javascript">
+var cdf = new cdfplugin();
+cdf.embed('HTMLFiles/text_draft_2_79.cdf', 2147483647, 198);
+</script>
+</p>
+
+<p class="Text">
+ So now that we have a good understanding of the question, how can we apply it to obtain an answer for this system? We know the answer cannot be a boundary condition (i.e. <span style='font-weight: bold;'>a</span>=<span style='font-weight: bold;'>M</span> or <span style='font-weight: bold;'>b</span>=<span style='font-weight: bold;'>M</span>), since the penalty is negative infinity for those values of <span style='font-weight: bold;'>a</span> and <span style='font-weight: bold;'>b</span>. Thus, the answer must be some combination of nonzero <span style='font-weight: bold;'>a</span> and <span style='font-weight: bold;'>b</span>. From the interactive figures, we can deduce that the maximum is somewhat less than half of <span style='font-weight: bold;'>M</span>. However, we want to know by how much, so we seek an analytical solution. We use the <span style='font-weight: bold;'>First Order Condition</span>
+</p>
+
+
+
+{<table class='EquationNumbered'><tr><td>, Automatic, $CellContext`IncludeCount[</td><td class='EquationNumberedLabel'>(`1`.`2`)</td></tr></table>, BookChapterNumber, EquationNumbered]}[FormBox[RowBox[{RowBox[{RowBox[{U, '}], RowBox[{(, RowBox[{a, ,, M}], )}]}], =, 0}], TraditionalForm]]<p class="Text">
+ to find the maximum, since the maximum is where the derivative is flat. In mathematica, this is very simple to calculate:
+</p>
+
+
+
+<p class="Example">
+ <span style='font-style: italic;font-weight: bold;'>Example 3.1.1.</span><span style='font-style: italic;'> Solving for the value of a that maximizes U in a long way and a succinct way.</span>
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_80.png" alt="text_draft_2_80.png" width="244" height="46" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_81.png" alt="text_draft_2_81.png" width="188" height="14" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_82.png" alt="text_draft_2_82.png" width="512" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_83.png" alt="text_draft_2_83.png" width="64" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_84.png" alt="text_draft_2_84.png" width="337" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_85.png" alt="text_draft_2_85.png" width="64" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/text_draft_2_86.png" alt="text_draft_2_86.png" width="394" height="46" style="vertical-align:middle" />
+</p>
+
+<p class="Output">
+ <img src="HTMLFiles/text_draft_2_87.png" alt="text_draft_2_87.png" width="64" height="30" style="vertical-align:middle" />
+</p>
+
+<p class="Text">
+ As we can see,<span style='font-weight: bold;'> our utility is maximized when a=M/3</span>. (From <span style='font-weight: bold;'>a</span>+<span style='font-weight: bold;'>b</span>=<span style='font-weight: bold;'>M</span>, we also get <span style='font-weight: bold;'>b=2M/3</span>.) If you go back up to the graphs, this becomes readily apparent, for example, when you set M to 6: the maximum appears at a=2.
+</p>
+
+
+
+<p class="Text">
+ To get a sense of the extent to which <span style='font-style: italic;'>Mathematica</span> has simplified this question, try solving it by hand. You may notice that there are many places for human error, such as cross multiplying fractions and applying the chain rule to logarithms.
+</p>
+
+
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="Text">
+ 
+</p>
+
+
+
+<p class="BookChapterNumber">
+ 4
+</p>
+
+
+
+<p class="BookChapterTitle">
+ Consumer and Producer Theory
+</p>
+
+
+
+
+
+
+<div style="font-family:Helvetica; font-size:11px; width:100%; border:1px none #999999; border-top-style:solid; padding-top:2px; margin-top:20px;">
+ <a href="http://www.wolfram.com/language/" style="color:#000; text-decoration:none;">
+  <span style="color:#555555">Created with the Wolfram Language</span> 
+ </a>
+</div>
+</body>
+
+</html>
