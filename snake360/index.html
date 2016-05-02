@@ -119,12 +119,13 @@ function drawScene()
 	}
 
 	head = segments[segments.length - 1];
+	ctx.fillStyle = '#ff4500';
+	ctx.fillStyle = '#ff4500';
 	ctx.beginPath();
 	ctx.arc((head.x+size*Math.cos(head.d+Math.PI/4))*wx,(head.y+size*Math.sin(head.d+Math.PI/4))*wy,wx*size/3,0,2*Math.PI);
+	ctx.fill();
+	ctx.beginPath();
 	ctx.arc((head.x+size*Math.cos(head.d-Math.PI/4))*wx,(head.y+size*Math.sin(head.d-Math.PI/4))*wy,wx*size/3,0,2*Math.PI);
-	ctx.fillStyle = '#ff4500';
-	ctx.stroke();
-	ctx.fillStyle = '#ff4500';
 	ctx.fill();
 
 	ctx.beginPath();
