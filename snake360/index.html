@@ -168,7 +168,7 @@ function updateVars()
 		{
 			score += food[i].s;
 			size += 0.0001 * food[i].s;
-			collision_dist += 0.0001 * food[i].s;
+			collision_dist += 0.00005 * food[i].s;
 			console.log(score);
 			food[i] = addFood();
 			for(i=0;i<Math.floor(score/0.25)-segments.length;i++){addSegment()};
