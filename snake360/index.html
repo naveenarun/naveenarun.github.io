@@ -100,10 +100,10 @@ function drawScene()
 	ctx.font = "30px Arial";
 	ctx.fillStyle = "white";
 	ctx.fillText("Score: " + (score).toFixed(2),20,50);
-//	ctx.beginPath();
-//	ctx.arc(mouse_x*wx,mouse_y*wy,wx/50,0,2*Math.PI);
-//	ctx.fillStyle = "red"
-//	ctx.fill();
+	ctx.beginPath();
+	ctx.arc(mouse_x*wx,mouse_y*wy,wx/50,0,2*Math.PI);
+	ctx.fillStyle = "red"
+	ctx.fill();
 	for(i=0;i<food.length;i++)
 	{
 		ctx.beginPath();
