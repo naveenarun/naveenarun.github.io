@@ -1,0 +1,209 @@
+<style>
+* {margin-top: 0px; margin-left:0px; margin-right:0px; margin-bottom:0px; overflow: hidden;}
+</style>
+<head>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<body>
+<script>
+var mouse_x = 0;
+var mouse_y = 0;
+var wx = 0;
+var wy = 0;
+
+canvas = document.getElementById("myCanvas");
+ctx = canvas.getContext("2d");
+window.onresize = onResize;
+canvas.onclick = mouseClickHandler;
+canvas.onmousemove = mouseMoveHandler;
+var startup, spacing, size, collision_dist, score, mainloop, isLegal, segments, food;
+init();
+
+function init()
+{
+	segments = [];
+	food = [];
+	onResize();
+	startup = window.setInterval(waitToStart,10);
+	spacing = 0.01;
+	size = 0.01;
+	collision_dist = 0.015;
+	score = 0;
+	for(i=0;i<3;i++)
+	{
+		addSegment();
+	}
+	for(i=0;i<20;i++)
+	{
+		food.push(addFood());
+	}
+}
+
+function addSegment()
+{
+	if (segments.length < 3)
+	{
+		segments.push(new posObject(0.5+spacing*segments.length,0.5,1,0));
+	}
+	else
+	{
+		first = segments[0];
+		segments.unshift(new posObject(first.x,first.y,first.v,first.d));
+	}
+}
+
+function addFood()
+{
+	return new foodObject(Math.random()*0.8+0.1,Math.random()*0.8+0.1,Math.random());
+}
+
+function mouseClickHandler(event)
+{
+	addSegment();
+}
+
+function posObject(xval, yval, v_val, dir)
+{
+	this.x = xval;
+	this.y = yval;
+	this.v = v_val;
+	this.d = dir;
+}
+
+function foodObject(xval, yval, size)
+{
+	this.x = xval;
+	this.y = yval;
+	this.s = size;
+}
+
+function onResize()
+{
+	wx = window.innerWidth;
+	wy = window.innerHeight;
+	canvas.width = wx;
+	canvas.height = wy;
+}
+
+function mouseMoveHandler(event)
+{
+	mouse_x = event.clientX / wx;
+	mouse_y = event.clientY / wy;
+}
+
+function drawScene()
+{
+	ctx.clearRect(0,0,wx,wy);
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,wx,wy);
+	ctx.font = "30px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("Score: " + (score).toFixed(2),20,50);
+//	ctx.beginPath();
+//	ctx.arc(mouse_x*wx,mouse_y*wy,wx/50,0,2*Math.PI);
+//	ctx.fillStyle = "red"
+//	ctx.fill();
+	for(i=0;i<food.length;i++)
+	{
+		ctx.beginPath();
+		ctx.fillStyle = "green";
+		ctx.arc(food[i].x*wx,food[i].y*wy,wx*food[i].s/100,0,2*Math.PI);
+		ctx.shadowColor = '#00ff00';
+		ctx.fill();
+	}
+	for(i=0;i<segments.length;i++)
+	{
+		ctx.beginPath();
+		ctx.arc(segments[i].x * wx,segments[i].y * wy,wx*size,0,2*Math.PI);
+		ctx.fillStyle = "black";
+		ctx.stroke();
+		ctx.fillStyle = "white";
+		ctx.fill();
+	}
+//	for(i=0;i<segments.length-1;i++)
+//	{
+//		ctx.beginPath();
+//		ctx.moveTo(segments[i].x*wx,segments[i].y*wy);
+//		ctx.lineTo(segments[i+1].x*wx,segments[i+1].y*wy);
+//		ctx.stroke();
+//	}
+}
+
+function updateVars()
+{
+	head = segments[segments.length - 1];
+	head.d = Math.atan2(mouse_y - head.y, mouse_x - head.x);
+	for(i=0;i<segments.length-1;i++)
+	{
+		first = segments[i];
+		second = segments[i+1];
+		dist = Math.sqrt(Math.pow(second.x - first.x,2) + Math.pow(second.y-first.y,2));
+		angle = Math.atan2(second.y-first.y,second.x-first.x);
+		first.d = angle;
+		first.v = (dist > spacing ? 1 : 0);
+	}
+	for(i=0;i<segments.length;i++)
+	{
+		curr = segments[i];
+		curr.x += Math.cos(curr.d) * curr.v / 200;
+		curr.y += Math.sin(curr.d) * curr.v / 200;
+	}
+	head = segments[segments.length - 1];
+	for(i=0;i<food.length;i++)
+	{
+		if (Math.abs(head.x - food[i].x) < collision_dist &&
+			Math.abs(head.y - food[i].y) < collision_dist)
+		{
+			score += food[i].s;
+			size += 0.0001 * food[i].s;
+			collision_dist += 0.0001 * food[i].s;
+			console.log(score);
+			food[i] = addFood();
+			for(i=0;i<Math.floor(score/0.25)-segments.length;i++){addSegment()};
+		}
+	}
+	for (i=0; i<segments.length-1; i++)
+	{
+		if (Math.abs(head.x - segments[i].x) < collision_dist/3 &&
+			Math.abs(head.y - segments[i].y) < collision_dist/3)
+		{
+//			window.clearInterval(mainloop);
+//			init();
+			return false;
+		}
+	}
+	return true;
+}
+
+function waitToStart()
+{
+	ctx.clearRect(0,0,wx,wy);
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,wx,wy);
+	ctx.fillStyle = "red";
+	ctx.fillRect(wx*0.85,wy*0.45,wx*0.1,wy*0.1);
+	ctx.font = "30px Arial";
+	ctx.fillStyle = "white";
+	ctx.fillText("Place cursor on red square to start.",50,50);
+	ctx.fillText("Don't hit yourself and don't stop moving!",50,100);
+	if (Math.abs(mouse_x - 0.90) < 0.05 && Math.abs(mouse_y - 0.50) < 0.05)
+	{
+		window.clearInterval(startup);
+		mainloop = window.setInterval(main,20);
+	}
+}
+
+function main()
+{
+	isLegal = updateVars();
+	if (!isLegal)
+	{
+		console.log("illegal");
+		window.clearInterval(mainloop);
+		init();
+	}
+	drawScene();
+}
+
+</script>
