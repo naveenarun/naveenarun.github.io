@@ -6,14 +6,14 @@
 <body>
 
 <center><h1>Dat Boiii</h1></center>
-<center><i>Use left/right to move, up to jump. Refresh to restart.</i>
-<p><input id="mute" type="checkbox"></input>Mute Audio  
-<input id="effects" type="checkbox"></input>Mute Effects
-</p><p>
+<center><i>Use left/right to move, click or press up to jump. Refresh to restart.</i>
+<p>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </p>
 <canvas id="mycanvas"></canvas>
-<p></p>
+<p><input id="mute" type="checkbox"></input>Mute Audio  
+<input id="effects" type="checkbox"></input>Mute Effects
+</p>
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://naveenarun.github.io/waddup" data-text="waddup boii">Tweet</a>
 
 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fnaveenarun.github.io%2Fwaddup&layout=button_count&mobile_iframe=true&width=87&height=20&appId" width="87" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -28,6 +28,7 @@ window.setInterval(frogPhysics,50);
 c = document.getElementById("mycanvas")
 ctx = c.getContext("2d")
 document.onkeydown = updateFrog;
+c.onclick = jumpFrog;
 c.width = 1000;
 c.height = 500;
 //document.getElementById("riff").loop = true;
@@ -86,23 +87,29 @@ function updateFrog(event)
 		sprite_x += 5.5 * vel;
 		isPressed = true;
 	}
-	if (a == 38 && v == 0 && h == 0)
+	if (a == 38)
 	{
-		v = 20;
-		if (!effects.checked)
-		{
-			if (wedemboyz)
-			{
-				riff2.play();
-			}
-			else
-			{
-				riff3.play();
-			}
+		jumpFrog();
+	}
+}
+
+function jumpFrog()
+{
+	if (v == 0 && h == 0)
+        {
+                v = 20;
+                if (!effects.checked)
+                {
+                        if (wedemboyz)
+                        {
+                                riff2.play();
+                        }
+                        else
+                        {
+                                riff3.play();
+                        }
 		}
 		wedemboyz = !wedemboyz;
-//	document.getElementById("riff").pause();
-//	document.getElementById("wedemboyz").play();
 	}
 }
 
