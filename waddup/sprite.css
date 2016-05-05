@@ -1,0 +1,11 @@
+.frame { 
+ background-color: transparent;
+ background-image: url('sprite.png');
+ background-repeat: no-repeat;
+ width: 271px;
+ height: 387px;  }
+.frame-0 { background-position: 0 0; }
+.frame-4 { background-position: -312px 0; } 
+.frame-2 { background-position: -624px 0; } 
+.frame-1 { background-position: -936px 0; } 
+.frame-3 { background-position: -1248px 0; } 
