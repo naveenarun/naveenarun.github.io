@@ -34,10 +34,6 @@ c.height = 500;
 score = 1;
 cw = c.width;
 ch = c.height;
-var frog = new Image();
-frog.src = "sprite.png";
-var illuminati = new Image();
-illuminati.src = "illuminati.png";
 //frame_x = 271;
 frame_x = 290;
 frame_y = 386;
@@ -56,6 +52,13 @@ checkbox = document.getElementById("mute");
 effects = document.getElementById("effects");
 checkbox.onchange = function(){if(checkbox.checked){riff.pause();cats1.pause();cats2.pause();}else{if(lives<=0){cats1.play();}else{riff.play();}};};
 effects.onchange = function(){if(effects.checked){riff2.pause();riff3.pause();ohshit.pause();}};
+assets = Array(2).fill(false);
+var frog = new Image();
+frog.src = "sprite.png";
+//frog.onload = function() {assets[0]=true;};
+var illuminati = new Image();
+illuminati.src = "illuminati.png";
+//illuminati.onload = function() {assets[1]=true;};
 riff = new Audio("mainloop2.mp3");
 riff2 = new Audio("wedemboyz_effect.mp3");
 riff3 = new Audio("holdup_effect.mp3");
@@ -63,13 +66,17 @@ cats1 = new Audio("cats_sound_1.mp3");
 cats2 = new Audio("cats_sound_2.mp3");
 ohshit = new Audio("ohshit.mp3");
 wedemboyz = false;
-riff.play();
 riff.addEventListener('ended',function(){riff.play();});
 colorloop = ['red','blue','green','black','purple'];
 lives = 3;
-myupdater = window.setInterval(updateCanvas,10);
-window.setInterval(frogPhysics,50);
-document.onkeydown = updateFrog;
+window.onload = beginCycles;
+function beginCycles()
+{
+	riff.play();
+	myupdater = window.setInterval(updateCanvas,10);
+	window.setInterval(frogPhysics,50);
+	document.onkeydown = updateFrog;
+}
 
 function updateFrog(event)
 {
