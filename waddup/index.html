@@ -7,6 +7,7 @@
 
 <center><h1>Dat Boiii</h1></center>
 <center><i>Use left/right to move, click or press up to jump. Refresh to restart.</i>
+<i><div id="loading">Loading game assets (2 images, 6 audio files - 668kb)...</div></i>
 <p>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </p>
@@ -57,7 +58,7 @@ var frog = new Image();
 frog.src = "sprite.png";
 //frog.onload = function() {assets[0]=true;};
 var illuminati = new Image();
-illuminati.src = "illuminati.png";
+illuminati.src = "illuminati_triangle_eye.png";
 //illuminati.onload = function() {assets[1]=true;};
 riff = new Audio("mainloop2.mp3");
 riff2 = new Audio("wedemboyz_effect.mp3");
@@ -72,9 +73,11 @@ lives = 3;
 window.onload = beginCycles;
 function beginCycles()
 {
-	riff.play();
+	myloader = document.getElementById("loading");
+	myloader.parentElement.removeChild(myloader);
 	myupdater = window.setInterval(updateCanvas,10);
 	window.setInterval(frogPhysics,50);
+	riff.play();
 	document.onkeydown = updateFrog;
 }
 
@@ -209,7 +212,7 @@ function updateCanvas()
 	for (i=0;i<objs.length;i++)
 	{
 		yval = 375 - 2/11*(objs[i]-300);
-		ctx.drawImage(illuminati,0,0,1222,1272,objs[i],yval,40,40);
+		ctx.drawImage(illuminati,0,0,100,104,objs[i],yval,40,40);
 //		ctx.stroke();
 	}
 //1222 1272
