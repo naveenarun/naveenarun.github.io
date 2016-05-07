@@ -11,7 +11,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </p>
 <canvas id="mycanvas"></canvas>
-<p><input id="mute" type="checkbox"></input>Mute Audio  
+<p><input id="mute" type="checkbox"></input>Mute Music  
 <input id="effects" type="checkbox"></input>Mute Effects
 </p>
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://naveenarun.github.io/waddup" data-text="waddup boii">Tweet</a>
@@ -58,12 +58,13 @@ v = 0;
 checkbox = document.getElementById("mute");
 effects = document.getElementById("effects");
 checkbox.onchange = function(){if(checkbox.checked){riff.pause();cats1.pause();cats2.pause();}else{if(lives<=0){cats1.play();}else{riff.play();}};};
-effects.onchange = function(){if(effects.checked){riff2.pause();riff3.pause();}};
+effects.onchange = function(){if(effects.checked){riff2.pause();riff3.pause();ohshit.pause();}};
 riff = new Audio("mainloop2.mp3");
 riff2 = new Audio("wedemboyz_effect.mp3");
 riff3 = new Audio("holdup_effect.mp3");
 cats1 = new Audio("cats_sound_1.mp3");
 cats2 = new Audio("cats_sound_2.mp3");
+ohshit = new Audio("ohshit.mp3");
 wedemboyz = false;
 riff.play();
 riff.addEventListener('ended',function(){riff.play();});
@@ -100,11 +101,11 @@ function jumpFrog()
                 v = 20;
                 if (!effects.checked)
                 {
-                        if (wedemboyz)
+                        if (wedemboyz && lives>0)
                         {
                                 riff2.play();
                         }
-                        else
+                        else if (!wedemboyz && lives >0)
                         {
                                 riff3.play();
                         }
@@ -135,8 +136,8 @@ function frogPhysics()
 		if (objs[i] > sprite_x + 40 && objs[i] < sprite_x + 100 && h < 20)
 		{
 			v = 40;
+			if(!effects.checked){ohshit.play()};
 			lives -= 1;
-			score = -score;
 		}
 		objs[i] += 5.5/2*vel;
 	}
@@ -158,11 +159,11 @@ function frogPhysics()
 		sprite_x = 0;
 		sprite_y = 200-2/11*(0-300);
 	}
+	vel = 2 + score/2000;
 }
 	
 function updateCanvas()
 {
-	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 	if (lives <= 0)
 	{
 		ctx.font = "200px Comic Sans MS";
@@ -171,17 +172,23 @@ function updateCanvas()
 		riff.pause();
 		cats1.addEventListener('ended',function(){cats2.play();});
 		cats2.addEventListener('ended',function(){cats1.play();});
-		if(!mute.checked){cats1.play();};	
+		if(!mute.checked){cats1.play();};
+		objs = [];
+		ctx.clearRect(100,10,frame_x*0.1,frame_y*0.1);
 	}
+	else
+	{
+	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 	ctx.font = "30px Comic Sans MS";
 	ctx.fillStyle = colorloop[myframe];
 	ctx.fillText("Lives: ",10,40);
+	ctx.fillText("Score: " + score,10,90);
+	score += 1;
 	for(i=0;i<lives;i++)
 	{
 		ctx.drawImage(frog,selector[myframe],0,frame_x,frame_y,100+40*i,10,frame_x*0.1,frame_y*0.1);
 	}
-	score *= 1.1;
-	ctx.fillText("Score: " + score,10,90);
+		
 	ctx.beginPath();
 	ctx.moveTo(-120,540);
 	ctx.lineTo(1020,340);
@@ -200,5 +207,6 @@ function updateCanvas()
 	}
 //1222 1272
 	ctx.drawImage(frog,selector[myframe],0,frame_x,frame_y,sprite_x,sprite_y-h,frame_x*sprite_scale,frame_y*sprite_scale);
+	}
 }
 </script>
