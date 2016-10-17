@@ -1,0 +1,51 @@
+% SETUP - NEED ALL OF THESE
+clc;
+clear;
+close all;
+hold on;
+echo off;
+
+% LOAD DATA (FROM FILE, PROBLEM SET, ETC.)
+xcurve = [0,1,2,3,4];
+ycurve = [0,2.6,3.5,3.9,4];
+spline_method = @spline; % can be @spline, @interp1, @pchip
+
+% HERE ARE THE START AND STOP CONDITIONS
+xstart = 3.9;
+xend = 0.1;
+efficiency = 1;
+
+% CHOOSE A PLOT RANGE
+xrange = [0,4];
+
+% CREATE FUNCTIONS FOR OPERATING LINE AND DATA CURVE
+myline = @(x)x;
+curve_function = @(x)spline_method(xcurve,ycurve,x);
+inverse_curve_function = @(y)fzero(@(x)curve_function(x)-y,xrange);
+
+% PLOT
+fplot(myline,xrange);
+fplot(curve_function,xrange);
+
+% INITIALIZE X, Y, AND NUMBER OF STEPS
+current_x = xstart;
+current_y = myline(xstart);
+numsteps = 0;
+
+while current_x > xend
+    % CHOOSE NEW COORDINATES
+    new_x = inverse_curve_function(current_x);
+    new_x = (current_x - new_x)*(1-efficiency) + new_x;
+    new_y = myline(new_x);
+    
+    % DRAW STAIRCASE STEP
+    plot([current_x,new_x],[current_y,current_y]);
+    plot([new_x,new_x],[current_y,new_y]);
+    
+    % UPDATE THE CURRENT X, Y, AND NUMBER OF STEPS
+    current_x = new_x;
+    current_y = new_y;
+    numsteps = numsteps + 1;
+end
+
+disp(sprintf('Number of steps: %d',numsteps))
