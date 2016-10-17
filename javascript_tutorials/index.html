@@ -1,0 +1,32 @@
+<html>
+<p>Hello World!</p>
+<p><input id="helpbox" type="text" value="()--" maxlength=14 onkeyup="phoneFunction()"><a href='.'>(help)</a></p>
+<p><button onclick="myFunction()">Double text box</button></p>
+<p><img src='http://newsinfo.iu.edu/pub/libs/images/usr/11189.jpg' alt='This is katz'></p>
+</html>
+
+<script>
+function myFunction() {
+	var x = document.getElementById("helpbox").value;
+	x = x + ' ' + x;
+	document.getElementById("helpbox").value = x;
+}
+
+function phoneFunction()
+{
+	var x = document.getElementById("helpbox").value;
+	document.getElementById('helpbox').value = 'no';
+	fixedstr = '';
+	// Clean up input
+	for(var i=0;i<x.length;i++)
+	{
+		if (x[i]>='0' && x[i]<='9')
+		{
+			fixedstr = fixedstr + x[i];
+		}
+	}
+	fixedstr = "(" + fixedstr.slice(0,3) + ")-" + fixedstr.slice(3,6) + "-" + fixedstr.slice(6,10);
+	document.getElementById("helpbox").value = fixedstr;
+
+}
+</script>

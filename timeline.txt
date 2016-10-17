@@ -1,0 +1,26 @@
+snake360 (5/1 - 5/2)
+	- use mouse to make snake eat dots
+	- first time writing javascript - no libraries used
+	- html5 canvas graphics
+	- particles-in-a-chain physics; saves high scores
+	- mouse events and setInterval
+	- one of daily top posts (40 karma) on /r/webgames on 5/2
+
+waddup (5/4 - 5/7)
+	- published 5/5
+	- endless runner - use arrow keys to jump over and avoid incoming obstacles
+	- first use of keyboard, onload, and checkbox events
+	- first use of CSS for sprite mapping
+	- html5 audio controls
+	- DOM manipulation (removing elements)
+	- social media integration (facebook share/comments, twitter and reddit share, paypal integration)
+	- popup windows (Tumblr)
+	- using localhost and SimpleHTTPServer (python) to debug
+	- 7 facebook shares (6 external) by 5/5
+	- 5/6 shared on Dat Boi (page w/ 1400 likes)
+	- shares: https://www.facebook.com/TrollZinga/, https://www.facebook.com/oshitwaddup/, https://www.facebook.com/waddupdatboi/
+	- scheduled share on https://www.facebook.com/allscreamfornicememes/
+	- shared on Dat boi (page w/ 18000 likes), >250 shares w/i 4 hours
+	- gilded on reddit
+	- article on Daily Dot (http://www.dailydot.com/lol/dat-boi-the-game/)
+	- shared by https://www.facebook.com/unexpectedMemes/ (320k likes)

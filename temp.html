@@ -1,0 +1,66 @@
+<link rel="stylesheet" type="text/css" href="sprite.css">
+<html>
+<center><h1>Dat Boiii</h1></center>
+<center><i>Use the arrow keys to move</i></center>
+<p></p>
+<center><canvas id="mycanvas"></canvas></center>
+</html>
+
+<script>
+window.setInterval(updateCanvas,10);
+c = document.getElementById("mycanvas")
+ctx = c.getContext("2d")
+document.onkeydown = updateFrog;
+c.width = 1000;
+c.height = 500;
+
+cw = c.width;
+ch = c.height;
+var frog = new Image();
+frog.src = "sprite.png";
+//frame_x = 271;
+frame_x = 290;
+frame_y = 386;
+offsets = 
+sprite_x = 300;
+sprite_y = 200;
+sprite_scale = 0.5;
+selector=[0,936,624,1248,312]
+myframe = 0
+prevKey = 0;
+
+function updateFrog(event)
+{
+	a = event.keyCode;
+	if (a == 37)
+	{
+		myframe = (myframe + 1) % 5;
+		sprite_y += 2;
+		sprite_x -= 11;
+	}
+	if (a == 39)
+	{
+		myframe = (myframe == 0 ? 4 : myframe - 1);
+		sprite_y -= 2;
+		sprite_x += 11;
+	}
+	
+}
+
+function updateCanvas()
+{
+	ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+//	ctx.fillStyle = "red";
+	ctx.beginPath();
+	ctx.moveTo(-120,540);
+	ctx.lineTo(1020,340);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(-120,400);
+	ctx.lineTo(1020,200);
+	ctx.stroke();
+	ctx.rect(0,0,ctx.canvas.width,ctx.canvas.height);
+	ctx.stroke()
+	ctx.drawImage(frog,selector[myframe],0,frame_x,frame_y,sprite_x,sprite_y,frame_x*sprite_scale,frame_y*sprite_scale);
+}
+</script>

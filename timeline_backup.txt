@@ -1,0 +1,18 @@
+snake360 (5/1 - 5/2)
+	- use mouse to make snake eat dots
+	- first time writing javascript - no libraries used
+	- html5 canvas graphics
+	- particles-in-a-chain physics; saves high scores
+	- mouse events and setInterval
+	- one of daily top posts (40 karma) on /r/webgames on 5/2
+
+waddup (5/4 - 5/7)
+	- endless runner - use arrow keys to jump over and avoid incoming obstacles
+	- keyboard, onload, and checkbox events
+	- first use of CSS for sprite mapping
+	- html5 audio controls
+	- DOM manipulation (removing elements)
+	- social media integration (facebook and twitter)
+	- 7 facebook shares (6 external) by 5/5
+	- 5/6 shared on Dat Boi (page w/ 1400 likes)
+	- will be shared on Dat boi (page w/ 18000 likes)
