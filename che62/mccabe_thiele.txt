@@ -1,0 +1,66 @@
+clc;
+clear;
+close all;
+hold on;
+echo off;
+
+% SETUP SECTION
+
+% options
+spline_method = @spline; % can be @spline, @interp1, @pchip
+plot_region = [0, 1];
+title('Class Example: Benzene-Toluene Column');
+xlabel('Mol fraction Benzene, liquid');
+ylabel('Mol fraction Benzene, vapor');
+
+% Raw Data
+xvals = [linspace(0.1, 0.9, 9), 0.95]; % Mol fractions
+yvals = [0.21 0.37 0.51 0.64 0.72 0.79 0.86 0.91 0.96 0.98]; % Mol fractions
+xvals=[0 xvals 1]; % Add boundary values
+yvals=[0 yvals 1]; % Add boundary values
+R=3.5; % Reflux ratio
+xZ = 0.5; % Feed mol fraction
+xD = 0.8; % Distillate mol fraction
+xB = 0.2; % Bottoms mol fraction
+
+% Helper function - creates a line function between two points [x,y] and [x,y]
+line = @(x, p1, p2) (p2(2)-p1(2))/(p2(1)-p1(1))*x+(p1(2)*p2(1)-p1(1)*p2(2))/(p2(1)-p1(1));
+
+% Functions
+curve_function = @(x) spline_method(xvals, yvals, x);
+inverse_curve_function = @(y) fzero(@(x)y-curve_function(x),plot_region);
+
+% Top operating line is determined by reflux ratio
+above_feed_line = @(x) xD/(R+1)+R/(R+1)*x;
+% Bottom operating line connects (xB, xB) to the top operating line at xZ
+below_feed_line = @(x) line(x, [xB, xB], [xZ, above_feed_line(xZ)]); 
+% combine operating lines into single function
+operating_line = @(x) (x<xZ)*below_feed_line(x) + (x>xZ)*above_feed_line(x);
+
+
+% Plotting
+plot([xZ, xZ], plot_region, 'k:');
+fplot(curve_function,plot_region,'m-');
+fplot(@(x)x,plot_region,'r-');
+fplot(operating_line,[0,1],'b-');
+xlim(plot_region);
+ylim(plot_region);
+
+
+% While loop
+
+current_x=xD; % Start at top
+current_y=xD;
+counter = 0;
+while current_y > xB % Go until bottom
+    counter = counter + 1;
+    new_x = fzero(@(x) curve_function(x)-current_y,[0,1]);
+    plot([current_x, new_x],[current_y,current_y],'k-');
+    quiver(current_x, current_y, (new_x - current_x)/1.5, 0, 'k-','MaxHeadSize',0.5); % can delete/ignore
+    new_y = operating_line(new_x);
+    plot([new_x, new_x],[current_y, new_y],'k-');
+    quiver(new_x, current_y, 0, (new_y-current_y)/1.5, 'k-','MaxHeadSize',0.5); % can delete/ignore
+    current_x = new_x;
+    current_y = new_y;
+end
+
