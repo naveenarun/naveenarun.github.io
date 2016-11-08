@@ -63,6 +63,7 @@ while current_y > xB % Go until bottom
     counter = counter + 1;
     new_x = inverse_curve_function(current_y);
     plot([current_x, new_x], [current_y, current_y], 'k-');
+    text(new_x + 0.02, current_y - 0.04, num2str(counter));
     new_y = operating_line(new_x);
     plot([new_x, new_x], [current_y, new_y], 'k-');
     current_x = new_x;
