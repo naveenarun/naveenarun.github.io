@@ -1,0 +1,70 @@
+DER
+clc;
+clear;
+close all;
+hold on;
+echo off;
+
+% SETUP
+
+% OPTIONS
+spline_method = @spline; % can be @spline, @interp1, @pchip
+plot_region = [0, 1];
+title('Benzene Toluene Column');
+xlabel('Mol fraction Benzene, Liquid');
+ylabel('Mol fraction Benzene, Vapor');
+
+% RAW DATA
+xvals = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95];
+yvals = [0.21, 0.37, 0.51, 0.64, 0.72, 0.79, 0.86, 0.91, 0.96, 0.98];
+xvals = [0, xvals, 1];
+yvals = [0, yvals, 1];
+R = 3.5; % Reflux ratio, given in question
+xZ = 0.5; % Feed mol fraction, given in question; also seen as xF
+xD = 0.8; % Distillate mol fraction
+xB = 0.2; % Bottoms mol fraction
+
+% Helper function - creates a line function between [x1,y1] and [x2,y2]
+line = @(x, p1, p2) (p2(2)-p1(2))/(p2(1)-p1(1))*x+ ...
+    (p1(2)*p2(1)-p1(1)*p2(2))/(p2(1)-p1(1))
+
+%example_line = @(x) line(x, [0,0], [1,1])
+%fplot(example_line, [0,1])
+
+% Functions
+curve_function = @(x) spline_method(xvals, yvals, x);
+inverse_curve_function = @(y) fzero(@(x) y-curve_function(x), plot_region);
+
+% Top operating line is determined by reflux ratio - derived in class
+above_feed_line = @(x) xD/(R+1) + R/(R+1)*x;
+below_feed_line = @(x) line(x, [xB, xB], [xZ, above_feed_line(xZ)]);
+
+%fplot(above_feed_line, plot_region)
+%fplot(below_feed_line, plot_region)
+
+operating_line = @(x) (x <= xZ)*below_feed_line(x) + (x > xZ)*above_feed_line(x);
+
+%fplot(operating_line, plot_region)
+
+% Plotting
+plot([xZ, xZ], plot_region, 'k:');
+fplot(curve_function, plot_region, 'm-');
+fplot(@(x)x, plot_region, 'r-');
+fplot(operating_line, plot_region, 'b-');
+xlim(plot_region);
+ylim(plot_region);
+
+% While loop
+
+current_x = xD; % Start at top
+current_y = xD;
+counter = 0;
+while current_y > xB % Go until bottom
+    counter = counter + 1;
+    new_x = inverse_curve_function(current_y);
+    plot([current_x, new_x], [current_y, current_y], 'k-');
+    new_y = operating_line(new_x);
+    plot([new_x, new_x], [current_y, new_y], 'k-');
+    current_x = new_x;
+    current_y = new_y;
+end
