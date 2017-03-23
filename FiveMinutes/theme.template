@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<script src="jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="lessons.css">
+
+<html lang="en">
+<head>
+<title>Lesson 1: Hello World!</title>
+</head>
+<body>
+
+<div class="toolbar">
+	<button id="run">run</button>
+</div>
+<div class="editor" id="editor1">console.log("hello world!");</div>
+
+<div id="fakeConsole" class="editor">This is the console.
+Here, you can see whatever output is given to console.log(), provided the
+program runs correctly.</div>
+</body>
+
+<script src="consoleSetup.js" type="text/javascript"></script>
+
+</html>
+
+
+
+

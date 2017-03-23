@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<script src="jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<html lang="en">
+<head>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    .editor {
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: auto;
+	height: 200px;
+	width: 80%; 
+    }
+    .toolbar {
+    	width: 80%;
+	height: 20px;
+	background: black;
+	margin: auto
+    }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+	<button id="run">run</button>
+</div>
+<div class="editor" id="editor1">console.log("hello world!");</div>
+
+<div id="fakeConsole" class="editor">This is the console.
+Here, you can see whatever output is given to console.log(), provided the
+program runs correctly.</div>
+</body>
+
+<script>
+    var editorText = ""
+    var editor = ace.edit("editor1");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+    execute = function(e) { editorText="";eval(editor.getValue()); }
+    $("#run").click(execute)
+    var fakeConsole = ace.edit("fakeConsole");
+    //fakeConsole.setTheme("ace/theme/monokai");
+console.log = function(message) {
+	editorText = editorText=="" ? editorText + message: editorText + "\n" + message;
+	fakeConsole.setValue( editorText, -1 );}
+    fakeConsole.setReadOnly(true);
+    editor.getSession().setUseWrapMode(true);
+    fakeConsole.getSession().setUseWrapMode(true);
+    fakeConsole.renderer.$cursorLayer.element.style.display = "none";
+</script>
+
+</html>
+
+
+
+

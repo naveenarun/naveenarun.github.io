@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<script src="jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="lessons.css">
+
+<html lang="en">
+<head>
+<title>Lesson 1: Hello World!</title>
+</head>
+<body>
+
+<div id="header">
+Run your first Javascript code in 10 seconds!
+</div>
+<div id="blurb">
+In most programming languages, the main medium of communication is text. Javascript is no different. Often, programmers find themselves working with text more than they work with pictures.
+<p>Javascript likes to be silent. You need to "politely" ask it to talk using "console.log". Whatever it says will be logged in a console (white box).
+</div>
+<div id="task">
+Task: Make Javascript talk to you using "console.log(statement)". Hit run, and feel free to experiment with different phrases. I'll explain the rest on the next page.
+</div>
+
+
+<div class="toolbar">
+	<button id="run">run</button>
+</div>
+
+<div class="editor" id="editor1">console.log("hello world!");</div>
+
+<div id="fakeConsole" class="editor">This is the console.
+Here, you can see whatever output is given to console.log(), provided the
+program runs correctly.</div>
+<div id="nextLevel">
+</div>
+</body>
+<script type="text/javascript">
+var level = 1;
+var testCondition = function(s) {return s=="hello world!";}
+</script>
+
+<script src="consoleSetup.js" type="text/javascript"></script>
+</html>
+
+
+
+

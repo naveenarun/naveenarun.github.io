@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<script src="jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="lessons.css">
+
+<html lang="en">
+<head>
+<title>Lesson 2: What is Javascript?</title>
+</head>
+<body>
+
+<div id="header">
+So what just happened? What does Javascript even do????
+</div>
+<div id="blurb">
+On the previous page, you used Javascript to "log" (write) the phrase "hello world!" in the console. The console is a place where the computer can say things for you to see.
+<p>Javascript is used to program the web. For example, this website uses Javascript to add pretty colors your code in the text box and run it. Other websites use Javascript to make animations and interactive content. More recently, it has also been used for a bunch of things outside the web like apps and robots.
+<p>Web programmers use their browser's built-in console to see what their code does. Your browser has a console, but it is hidden along with other tools that browsers provide to web programmers. On this page, I have redirected all console output to the white box so that you don't have to bother with developer tools.
+<p>What happened on the previous page? The phrase "console.log()" uses parentheses because it's a function, much like how f(x)=x+2 is a function. It takes an input (x), does something to it (adds two to x), and gives an output (the new value of x). In this case, Javascript takes an input ("hello world!"), does something to it (writes it in the console), and gives an output (nothing).
+<p>Why are there semicolons? Javascript doesn't really require any white space (spaces, tabs, or carriage returns), so the only way it can know where new lines start is with semicolons. If you're using a modern browser, the semicolons aren't necessary as long as you press enter between lines. The editor will tell you if you have any problems with semicolons by putting a small "i" next to line numbers.
+</div>
+<div id="task">
+Task: Run the following code.
+</div>
+
+
+<div class="toolbar">
+	<button id="run">run</button>
+</div>
+
+<div class="editor" id="editor1">console.log("My browser uses Javascript!");
+console.log("My browser is running this code!");
+console.log("Semicolons separate lines!");console.log("You don't need to start a new line if you use semicolons!");</div>
+
+<div id="fakeConsole" class="editor">This is the console.
+Here, you can see whatever output is given to console.log(), provided the
+program runs correctly.</div>
+</body>
+
+<script src="consoleSetup.js" type="text/javascript"></script>
+
+</html>
+
+
+
+

@@ -1,0 +1,23 @@
+.editor {
+	border: 1px solid black;
+	margin: auto;
+	height: 200px;
+	width: 80%;
+}
+.toolbar {
+	border: 1px solid black;
+	width: 80%;
+	height: 20px;
+	background: black;
+	margin: auto
+}
+#header {
+	font-size: xx-large;
+}
+#blurb {
+	padding-top: 10px;	
+}
+#task {
+	font-weight: bold;
+	padding-bottom: 30px;
+}
